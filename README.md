@@ -7,6 +7,7 @@
 <p align="center"> 
 <b>Figure</b> Overall visualization of EEGWaveNet architecture (a) Multi-scale convolution module, (b) Spatial-temporal feature extraction module, and (c) Classifier module consists of fully connected layers and activation for two-class classification. 
 </p>
+
 ## Note
 ```
 ## The source codes will be published with accepted manuscript
