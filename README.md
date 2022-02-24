@@ -7,7 +7,36 @@
 <b>Figure: </b> Overall visualization of EEGWaveNet architecture (a) Multi-scale convolution module, (b) Spatial-temporal feature extraction module, and (c) Classifier module consists of fully connected layers and activation for two-class classification. 
 </p>
 
-## Note
+## Example of our code's usage
+```python
+import torch
+import numpy as np
+import architecture
+import trainer
+
+#model
+Model = architecture.Net(21,2).float()
+
+#dummy data #shape as follow
+X_train = torch.tensor(np.random.rand(800,21,1024)).float()
+X_val = torch.tensor(np.random.rand(200,21,1024)).float()
+#label
+y_train = torch.tensor(np.array([np.random.choice([0,1]) for i in range(800)])).long()
+y_val = torch.tensor(np.array([np.random.choice([0,1]) for i in range(200)])).long()
+
+Train_set = (X_train,y_train)
+Val_set = (X_val,y_val)
+
+Trainer = trainer.trainer(Model, Train_set, Val_set, 2)
+
+Trainer.compile(learning_rate=0.001)
+Tracker = Trainer.train(epochs=5, batch_size=32, patience=10, directory='model.pt')
+
+print(Tracker)
 ```
-The source codes will be published with accepted manuscript
+## Versions
+```
+pytorch = 1.9.0
+numpy = 1.19.2
+sklearn = 0.24.1
 ```
