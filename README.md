@@ -7,6 +7,11 @@
 <b>Figure: </b> Overall visualization of EEGWaveNet architecture (a) Multi-scale convolution module, (b) Spatial-temporal feature extraction module, and (c) Classifier module consists of fully connected layers and activation for two-class classification. 
 </p>
 
+If `git` is avaliable, installation can be done via
+```
+git clone https://github.com/IoBT-VISTEC/EEGWaveNet
+```
+
 ## Example of our code's usage
 ```python
 import torch
