@@ -30,13 +30,17 @@ Val_set = (X_val,y_val)
 Trainer = trainer.trainer(Model, Train_set, Val_set, 2)
 
 Trainer.compile(learning_rate=0.001)
-Tracker = Trainer.train(epochs=5, batch_size=32, patience=10, directory='model.pt')
+Tracker = Trainer.train(epochs=50, batch_size=32, patience=10, directory='model.pt')
 
 print(Tracker)
 ```
-## Versions
+## Versions used in our code testing
+Note that different versions won't likely cause dependencies issues.
+Using TensorFlow instead of PyTorch may require kernel initializer settings to be changed, as using TensorFlow's initializers cause a drop in performance.
 ```
 pytorch = 1.9.0
 numpy = 1.19.2
 sklearn = 0.24.1
 ```
+
+For any inconvernienes and bug reports, contact ```konkuad2@gmail.com```
