@@ -14,42 +14,42 @@ class Net(nn.Module):
         self.temp_conv6 = nn.Conv1d(n_chans, n_chans, kernel_size=2, stride=2 ,groups=n_chans)
 
         self.chpool1    = nn.Sequential(
-            nn.Conv1d(n_chans, 32, kernel_size=(1,4),groups=1),
+            nn.Conv1d(n_chans, 32, kernel_size=4,groups=1),
             nn.BatchNorm1d(32),
             nn.LeakyReLU(0.01),
-            nn.Conv1d(32, 32, kernel_size=(1,4),groups=1),
+            nn.Conv1d(32, 32, kernel_size=4,groups=1),
             nn.BatchNorm1d(32),
             nn.LeakyReLU(0.01))
 
         self.chpool2    = nn.Sequential(
-            nn.Conv1d(n_chans, 32, kernel_size=(1,4),groups=1),
+            nn.Conv1d(n_chans, 32, kernel_size=4,groups=1),
             nn.BatchNorm1d(32),
             nn.LeakyReLU(0.01),
-            nn.Conv1d(32, 32, kernel_size=(1,4),groups=1),
+            nn.Conv1d(32, 32, kernel_size=4,groups=1),
             nn.BatchNorm1d(32),
             nn.LeakyReLU(0.01))
 
         self.chpool3    = nn.Sequential(
-            nn.Conv1d(n_chans, 32, kernel_size=(1,4),groups=1),
+            nn.Conv1d(n_chans, 32, kernel_size=4,groups=1),
             nn.BatchNorm1d(32),
             nn.LeakyReLU(0.01),
-            nn.Conv1d(32, 32, kernel_size=(1,4),groups=1),
+            nn.Conv1d(32, 32, kernel_size=4,groups=1),
             nn.BatchNorm1d(32),
             nn.LeakyReLU(0.01))
             
         self.chpool4    = nn.Sequential(
-            nn.Conv1d(n_chans, 32, kernel_size=(1,4),groups=1),
+            nn.Conv1d(n_chans, 32, kernel_size=4,groups=1),
             nn.BatchNorm1d(32),
             nn.LeakyReLU(0.01),
-            nn.Conv1d(32, 32, kernel_size=(1,4),groups=1),
+            nn.Conv1d(32, 32, kernel_size=4,groups=1),
             nn.BatchNorm1d(32),
             nn.LeakyReLU(0.01))
 
         self.chpool5    = nn.Sequential(
-            nn.Conv1d(n_chans, 32, kernel_size=(1,4),groups=1),
+            nn.Conv1d(n_chans, 32, kernel_size=4,groups=1),
             nn.BatchNorm1d(32),
             nn.LeakyReLU(0.01),
-            nn.Conv1d(32, 32, kernel_size=(1,4),groups=1),
+            nn.Conv1d(32, 32, kernel_size=4,groups=1),
             nn.BatchNorm1d(32),
             nn.LeakyReLU(0.01))
 
