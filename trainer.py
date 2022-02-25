@@ -106,7 +106,7 @@ class trainer:
             print("Training Time \t:","{:.5f}".format(Training_time))
             print("===================================================================================\n")
 
-            if epochs>patience:
+            if e>patience:
                 if val_loss.item()<=np.min(val_loss_tracker):
                     best_model = self.Model
                     torch.save(self.Model.state_dict(), directory)
