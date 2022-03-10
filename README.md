@@ -50,3 +50,15 @@ sklearn = 0.24.1
 ```
 
 For any inconvernienes and bug reports, contact ```konkuad2@gmail.com```
+
+## Citation
+Thuwajit, Punnawish, et al. "EEGWaveNet: Multi-Scale CNN-Based Spatiotemporal Feature Extraction for EEG Seizure Detection." *IEEE Transactions on Industrial Informatics (2021)*.
+```
+@article{thuwajit2021eegwavenet,
+  title={EEGWaveNet: Multi-Scale CNN-Based Spatiotemporal Feature Extraction for EEG Seizure Detection},
+  author={Thuwajit, Punnawish and Rangpong, Phurin and Sawangjai, Phattarapong and Autthasan, Phairot and Chaisaen, Rattanaphon and Banluesombatkul, Nannapas and Boonchit, Puttaranun and Tatsaringkansakul, Nattasate and Sudhawiyangkul, Thapanun and Wilaiprasitporn, Theerawit},
+  journal={IEEE Transactions on Industrial Informatics},
+  year={2021},
+  publisher={IEEE}
+}
+```
