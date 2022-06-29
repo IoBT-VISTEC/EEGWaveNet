@@ -76,6 +76,6 @@ class Net(nn.Module):
         w5      = self.chpool5(temp_w5).mean(dim=(-1))
     
         concat_vector  = torch.cat([w1,w2,w3,w4,w5],1)
-        classes        = nn.functional.softmax(self.classifier(concat_vector),dim=1)  
+        classes        = nn.functional.log_softmax(self.classifier(concat_vector),dim=1)  
 
         return classes
