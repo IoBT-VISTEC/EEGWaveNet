@@ -65,7 +65,7 @@ class trainer:
                     self.optimizer.zero_grad()
                     train_loss = self.loss_func(pred, target.cuda())
                     train_loss.backward()       
-                    self.optimizer.step
+                    self.optimizer.step()
                     
                 else:
                     
@@ -74,7 +74,7 @@ class trainer:
                     self.optimizer.zero_grad()
                     train_loss = self.loss_func(pred, target)
                     train_loss.backward()       
-                    self.optimizer.step
+                    self.optimizer.step()
 
                 batch_train_loss.append(train_loss)
 
@@ -83,20 +83,22 @@ class trainer:
             Training_time = time.time()-T0
 
             batch_val_loss = []
+            
+            with torch.no_grad():
 
-            for data, target in valloader:
-                
-                if torch.cuda.is_available():
-
-                    pred = self.Model(data.float().cuda())
-                    val_loss = self.loss_func(pred, target.cuda())
-                    batch_val_loss.append(val_loss)
-                
-                else:
+                for data, target in valloader:
                     
-                    pred = self.Model(data.float())
-                    val_loss = self.loss_func(pred, target)
-                    batch_val_loss.append(val_loss)
+                    if torch.cuda.is_available():
+
+                        pred = self.Model(data.float().cuda())
+                        val_loss = self.loss_func(pred, target.cuda())
+                        batch_val_loss.append(val_loss)
+                    
+                    else:
+                        
+                        pred = self.Model(data.float())
+                        val_loss = self.loss_func(pred, target)
+                        batch_val_loss.append(val_loss)
 
             final_val_loss = torch.mean(torch.tensor(batch_val_loss))    
 
