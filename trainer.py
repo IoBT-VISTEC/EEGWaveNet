@@ -135,14 +135,16 @@ class trainer:
         output = []
         testloader = torch.utils.data.DataLoader(X_test, batch_size=32, shuffle=True)
 
-        for data in testloader:
-            if torch.cuda.is_available():
-                pred = self.Model(data.float().cuda())
-                pred = list(np.argmax(list(pred.cpu().numpy()), axis=1))
-                output += pred
-            else:
-                pred = self.Model(data.float())
-                pred = list(np.argmax(list(pred.cpu().numpy()), axis=1))
-                output += pred
+        with torch.no_grad():
+
+          for data in testloader:
+              if torch.cuda.is_available():
+                  pred = self.Model.cuda()(data.float().cuda())
+                  pred = list(np.argmax(list(pred.cpu().numpy()), axis=1))
+                  output += pred
+              else:
+                  pred = self.Model(data.float())
+                  pred = list(np.argmax(list(pred.cpu().numpy()), axis=1))
+                  output += pred
 
         return output
