@@ -130,7 +130,7 @@ class trainer:
 
         return self.tracker
 
-    def predict(X_test):
+    def predict(self, X_test):
 
         output = []
         testloader = torch.utils.data.DataLoader(X_test, batch_size=32, shuffle=True)
